@@ -34,13 +34,15 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void updateUser(String login, String password) {
-        User user = findUserByLogin(login);
+    public User updateUser(String login, String password) {
+        //User user = findUserByLogin(login);
+        User user = userRepository.getOne((long) 2);
         if (user!=null) {
             user.setLogin(login);
             user.setPassword(password);
             userRepository.save(user);
         }
+        return user;
     }
 
     public List<User> findAll() {
