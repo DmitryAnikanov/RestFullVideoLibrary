@@ -39,4 +39,9 @@ public class UserController {
     public User findUser(@RequestParam String login) {
         return userService.findUserByLogin(login);
     }
+
+    @RequestMapping("/updateUser")
+    public User updateUser(@RequestParam String login, @RequestParam String password) {
+        return userService.updateUser(login, password);
+    }
 }
