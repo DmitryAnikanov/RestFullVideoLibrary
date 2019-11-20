@@ -9,6 +9,6 @@ public interface UserService {
     void saveUser(User note);
     void deleteUser(User user);
     void deleteUserById(Long id);
-    void updateUser(String login, String password);
+    User updateUser(String login, String password);
     List<User> findAll();
 }
